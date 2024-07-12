@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <title>Payment Error</title>
+</head>
+<style>
+    table {
+        padding: 88px 140px 116px 98px;
+        background: #F2F5FC;
+    }
+
+    @font-face {
+        font-family: 'Larken';
+        font-style: normal;
+        font-weight: normal;
+        src: local('Tangerine'), url('Larken Light.otf') format('opentype');
+    }
+
+    @font-face {
+        font-family: 'F Grotesk';
+        font-style: normal;
+        font-weight: normal;
+        src: local('Tangerine'), url('F Grotesk Book.otf') format('opentype');
+    }
+
+    @font-face {
+        font-family: 'Styrene A';
+        font-style: normal;
+        font-weight: normal;
+        src: local('Tangerine'), url('StyreneA-Bold.otf') format('opentype');
+    }
+
+    .table__header td svg {
+        margin-bottom: 32px;
+    }
+
+    .table__title td p {
+        color: var(--text-text-emphasized, #333);
+        font-family: Larken;
+        font-size: 28px;
+        font-style: normal;
+        font-weight: 300;
+        line-height: 110%;
+        letter-spacing: -0.28px;
+        margin: 0;
+    }
+
+    .table__text td {
+        height: 45px;
+        margin-top: 30px;
+    }
+
+    .table__text td span {
+        color: var(--text-text, #545454);
+        font-family: F Grotesk;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 140%;
+        letter-spacing: 0.28px;
+    }
+
+    .table__description td {
+        width: 440px;
+        margin-top: 30px;
+    }
+
+    .table__description td span {
+        color: var(--text-text, #545454);
+        font-family: F Grotesk;
+        font-size: 13px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 14px;
+        letter-spacing: 0.28px;
+        margin-top: 30px !important;
+    }
+
+    .table__btn td button {
+        margin-top: 32px;
+    }
+
+    .table__btn td .main {
+        border: none;
+        padding: 16px 24px;
+        justify-content: center;
+        align-items: center;
+        background: var(--r-3-black-text, #000);
+        color: var(--r-3-bone, #EFECE4);
+        text-align: center;
+        font-family: Styrene A;
+        font-size: 10px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 100%;
+        letter-spacing: 0.5px;
+        text-transform: uppercase;
+    }
+
+    .table__btn td .second {
+        padding: 16px 24px;
+        justify-content: center;
+        align-items: center;
+        color: #000;
+        text-align: center;
+        color: var(--black-text, #000);
+        font-family: Styrene A;
+        font-size: 10px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 100%;
+        letter-spacing: 0.5px;
+        text-transform: uppercase;
+        border: none;
+        background: none;
+    }
+
+    /*  */
+    .header_btn {
+        display: flex;
+        flex-direction: column;
+    }
+    .header_btn button{
+        width: 176.3px;
+        height: 42.5px;
+        border-radius:4px;
+        background-color: #3F6FF9;
+        border:none;
+        font-size: 13px;
+        font-weight: 500;
+        color: var(--r-3-bone, #EFECE4);
+        margin-top: 12px;
+        margin-bottom: 12px;
+    }
+
+    .table__link td {
+        display: flex;
+        align-items: center;
+    }
+
+    .table__link td span {
+        width: 34px;
+        height: 34px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        background-color: #E7EDFE;
+        margin-right: 10px;
+    }
+
+    .table__link td a {
+        color: #3F6FF9;
+        text-decoration: none;
+        font-size: 15px;
+        font-weight: bold;
+    }
+
+    .table__link {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .table__btn .google {
+        display: flex;
+
+    }
+
+    .table__btn {
+        display: flex;
+        justify-content: center;
+    }
+
+    .breakdown__title {
+        text-align: center;
+    }
+
+    .cards__title {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .cards__container2 {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        /* Three columns, each occupying 1 fraction of the available space */
+        gap: 10px;
+        width: 440.08px;
+    }
+
+    .cards__container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        /* Two columns, each occupying 1 fraction of the available space */
+        gap: 10px;
+        width: 440.08px;
+    }
+
+    .cards__container .box1 {
+        width: 183px;
+    }
+
+    
+    .cards__container .box2 {
+        width: 244px;
+    }
+
+    
+    .cards__container2 .box3 {
+        width: 140px;
+    }
+
+    .cards__container .box1,
+    .cards__container .box2,
+    .cards__container2 .box3 {
+        background-color: #FFF;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+        padding: 15px;
+        border-radius: 12px;
+    }
+    .table_btn{
+        border: none;
+        padding: 16px 24px;
+        justify-content: center;
+        align-items: center;
+        color: var(--r-3-bone, #EFECE4);
+        text-align: center;
+        font-family: Styrene A;
+        font-size: 10px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 100%;
+        letter-spacing: 0.5px;
+        text-transform: uppercase;
+        
+    }
+    .table_btn td .get_btn{
+        width: 176.3px;
+        height: 42.5px;
+        border-radius:4px;
+        background-color: #3F6FF9;
+        border:none;
+        font-size: 13px;
+        font-weight: 500;
+        color: var(--r-3-bone, #EFECE4);
+        margin-top: 12px;
+        margin-bottom: 12px;
+    }
+    
+    .table_link td {
+        display: flex;
+        align-items: center;
+    }
+
+    .table_link td a {
+        color: #3F6FF9;
+        text-decoration: none;
+        font-size: 60px;
+        font-weight: 400;
+        font-weight: bold;
+        margin-bottom: 30px;
+    }
+
+    .table_link {
+        display: flex;
+        justify-content: center;
+        margin-top: 30px;
+    }
+
+    .table_border td{
+        width: 80px;
+        border-top: 2px solid #D6D6D6;
+        padding-top: 30px;
+    }
+
+    .local_links .local_link{
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .local_links .local_link .phone_link span a{
+        text-decoration: none;
+        color:#3F6FF9;
+        margin-right: 12px;
+    }
+
+    .local_links .local_link .phone_link{
+        display: flex;
+
+    }
+    .local_links .local_link .phone_link span a i{
+        height: 35px;
+        width: 35px;
+        border-radius: 50%;
+        background-color:rgb(102, 151, 221, 0.4) ;
+        font-size: 22px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-right: 12px;
+    }
+    .table_lecense td{
+        display: flex;
+        justify-content: space-evenly;
+        margin-top: 30px;
+    }
+
+    .table_lecense td .log{
+        width: 200px;
+        height: 28px;
+        display: flex;
+        margin-bottom: 30px;
+    }
+    .table_lecense td .log img{
+        margin-right: 10px;
+    }
+    .table_lecense td .log .span{
+        font-size: 10px;
+        font-weight: 400;
+        padding-right:10px;
+    }
+    .table_lecense td .play_btn{
+        height: 35px;
+        width: 120x;
+        border-radius: 4px;
+        border:2px solid grey;
+        background-color: #fff;
+        display: flex;
+        align-items: center;
+    }
+    .table_lecense td .play_btn i{
+        font-size: 18px;
+    }
+    .table_lecense td .play_btn .title .first_title{
+        font-size: 10px;
+        font-weight: 400;
+    }
+    .table_lecense td .play_btn .title .second_title{
+        font-size: 12px;
+        font-weight: 400;
+    }
+    .table__descr{
+        height: 98px;
+        width: 440px;
+        /* margin: 0 auto;`*/
+    }
+    .table__descr td span{
+       display: flex;
+       justify-content: center;
+    }
+    .link {
+        height: 25px;
+        width: 150px;
+    }
+    .link td a{
+        display: flex;
+        justify-content: center;
+        color:#3F6FF9;
+        font-size: 22px;
+        font-weight: 400;
+    }
+
+</style>
+
+<body>
+    <table class="">
+        <tr class="table__header">
+            <td>
+                <img src="./img/logo.png" alt="">
+            </td>
+            <td class="header_btn">
+                <span>#PRODUCT UPDATE</span>
+                <button>Get Started</button>
+            </td>
+        </tr>
+        <tr class="table_main">
+            <td>
+                <img src="./img/main.png" alt="">
+            </td>
+        </tr>
+        <tr class="table__title">
+            <td>
+                <p>Dear User,</p>
+            </td>
+        </tr>
+        <tr class="table__text">
+            <td>
+                <span>Welcome to a new era of Cashaa!</span>
+            </td>
+        </tr>
+        <tr class="table__text">
+            <td>
+                <span>Now earn and lock-in the best yields of up to 34% p.a. on your crypto for <br> 24 months with our Earn XL product, 2-year Fixed term deposit.</span>
+            </td>
+        </tr>
+        <tr class="table__text">
+            <td style="text-align: center;">
+                <span>To know more get in touch with us:</span>
+            </td>
+        </tr>
+        <tr class="table__link">
+            <td>
+                <span>
+                    <img src="./img/tg.png" alt="">
+                </span>
+                <a href="t.me/cashaanews">t.me/cashaanews</a>
+            </td>
+            <td>
+                <span>
+                    <img src="./img/global.png" alt="">
+                </span>
+                <a href="t.me/cashaanews">cashaa.com</a>
+            </td>
+            <td>
+                <span>
+                    <img src="./img/info.png" alt="">
+                </span>
+                <a href="t.me/cashaanews">Helpdesk</a>
+            </td>
+        </tr>
+        <tr class="table__btn">
+            <td>
+                <button class="web">
+                    <img src="./img/web.png" alt="">
+                    <span>Web OS</span>
+                </button>
+            </td>
+        
+            <td>
+                <button class="google">
+                    <img src="./img/play.png" alt="">
+                    <div>
+                        <small>GET IT ON</small>
+                        <span>Google Play</span>
+                    </div>
+                </button>
+            </td>
+        </tr>
+        <tr class="table__breakdown">
+            <td class="breakdown__title">
+                <span>APR breakdown</span>
+            </td>
+        </tr>
+        <tr>
+            <td class="breakdown__img">
+                <img src="./img/breakdown.png" alt="">
+            </td>
+        </tr>
+        <tr class="table__cards">
+            <td class="cards__title">
+                <span>Why Invest In Earn 365</span>
+                <span>With Cashaa?</span>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div class="cards__container">
+                    <div class="box1">
+                        <img src="./img/check.png" alt="">
+                        <span>Fixed interest rate over the tenure of deposit.</span>
+                    </div>
+                    <div class="box2">
+                        <img src="./img/check.png" alt="">
+                        <span>Premature cancellation of fixed term deposits available to Gold and Diamond
+                            members.</span>
+                    </div>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div class="cards__container2">
+                    <div class="box3">
+                        <img src="./img/check.png" alt="">
+                        <span>Earn more by opting for payout in CAS.</span>
+                    </div>
+                    <div class="box3">
+                        <img src="./img/check.png" alt="">
+                        <span>Flexible payout frequency of monthly available to aid liquidity.</span>
+                    </div>
+                    <div class="box3">
+                        <img src="./img/check.png" alt="">
+                        <span>Cashaa is a EU-licensed and regulated platform.</span>
+                    </div>
+                </div>
+            </td>
+        </tr>
+        <tr class="table_btn">
+            <td>
+                <button class="get_btn">Get started oday</button>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <img src="image/Group 1244831372.png" alt="" class="table_security">
+            </td>
+        </tr>
+        <tr class="table__text">
+            <td>
+                <span>Happy investing! <br> Team Cashaa</span>
+            </td>
+        </tr>
+        <tr class="table__description">
+            <td>
+                <span>Disclaimer: The highest earn rates on stablecoins are on Platinum Membership Tier and with <br>Earn in CAS token enabled.</span>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <img style="margin-top: 30px;" src="image/Group 1244831373.png" alt="">
+            </td>
+        </tr>
+        <tr class="table_link">
+            <td>
+                <a href="" class="link_logo">cashaa</a>
+            </td>
+        </tr>
+        <tr class="table_border">
+            <td></td>
+        </tr>
+        <tr class="local_links">
+            <td class="local_link">
+                <div class="stars">
+                    <span>
+                        <img src="image/Trustpilo.png" alt="">
+                    </span>
+                </div>
+                
+                <div class="phone_link">
+                    <span>
+                        <a href="#">
+                            <i class="fa-brands fa-linkedin-in"></i>
+                        </a>
+                    </span>
+                    <span>
+                        <a href="#">
+                            <i class="fa-brands fa-facebook-f"></i>
+                        </a>
+                    </span>
+                    <span>
+                        <a href="#">
+                            <i class="fa-brands fa-twitter"></i>
+                        </a>
+                    </span>
+                    <span>
+                        <a href="#">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                    </span>
+                    <span>
+                        <a href="#">
+                            <i class="fa-brands fa-telegram"></i>
+                        </a>
+                    </span>
+                </div>
+            </td>
+        </tr>
+        <tr class="table_lecense">
+            <td >
+                <div class="log">
+                    <img src="image/museum 1.png" alt="">
+                    <span>license and regulated <br>digital assets institution</span>
+                </div>
+                <button class="play_btn">
+                    <i class="fa-brands fa-google-play"></i>
+                    <div class="title">
+                        <span class="first_title">GET IT ON</span><br>
+                        <span class="second_title">Google Play</span>
+                    </div>
+                </button>
+            </td>
+        </tr>
+        <tr class="table__descr">
+            <td>
+                <span>This e-mail contains confidential information and is intended for the named recipient(s) only. It is not financial advice and any investment decision you make is solely your responsibility.  Cashaa accepts no liability for consequences of any actions taken on the basis of the  information provided, including for any damages suffered by the recipient. Digital Assets are not money or legal tender, are not  backed by the government or by a central bank, and most do not  have any underlying assets, revenue stream, or another source of value. Please rationally judge  your ability to risk-taking and make decisions prudently.</span>
+            </td>
+        </tr>
+        <tr class="table__descr">
+            <td>
+                <span>© 2021 Cashaa. All rights reserved.</span>
+            </td>    
+        </tr>
+        <tr class="link">
+            <td>
+                <a href="#">Unsubscribe</a>
+            </td>
+        </tr>
+
+    </table>
+    
+</body>
+
+</html>
